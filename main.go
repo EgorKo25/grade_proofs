@@ -6,4 +6,5 @@ import (
 
 func main() {
 	packages.StartExample()
+	packages.FlagExample()
 }
