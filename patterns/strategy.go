@@ -56,7 +56,7 @@ func (a *AuthContext) Authenticate(credentials string) (string, error) {
 
 func main() {
 	context := &AuthContext{}
-	
+
 	context.SetStrategy(&JWTAuth{})
 	userID, err := context.Authenticate("valid-jwt-token")
 	if err != nil {
@@ -64,7 +64,7 @@ func main() {
 	} else {
 		fmt.Println("Аутентифицирован пользователь:", userID)
 	}
-	
+
 	context.SetStrategy(&BasicAuth{})
 	userID, err = context.Authenticate("user:password")
 	if err != nil {
@@ -72,7 +72,7 @@ func main() {
 	} else {
 		fmt.Println("Аутентифицирован пользователь:", userID)
 	}
-	
+
 	context.SetStrategy(&OAuth2Auth{})
 	userID, err = context.Authenticate("valid-oauth-token")
 	if err != nil {
